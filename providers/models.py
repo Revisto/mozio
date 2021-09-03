@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.gis.db import models
 
 
 # Create your models here.
@@ -18,7 +17,7 @@ class ProviderServiceArea(models.Model):
     provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     price = models.FloatField()
-    polygon = models.PolygonField()
+    polygon = models.JSONField()
 
     def __str__(self):
         return self.name
