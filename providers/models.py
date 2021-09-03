@@ -7,6 +7,16 @@ class Provider(models.Model):
     phone_number = models.IntegerField("phone")
     language = models.CharField("language", max_length=255)
     currency = models.CharField("currency", max_length=10)
-    
+
+    def __str__(self):
+        return self.name
+
+
+class ProviderServiceArea(models.Model):
+    provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    price = models.FloatField()
+    polygon = models.PolygonField()
+
     def __str__(self):
         return self.name
