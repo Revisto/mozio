@@ -11,13 +11,4 @@ class Provider(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class ProviderServiceArea(models.Model):
-    provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    price = models.FloatField()
-    polygon = models.JSONField()
-
-    def __str__(self):
-        return self.name
+        

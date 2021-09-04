@@ -3,7 +3,7 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'providers', views.ProviderViewSet)
+router.register(r'polygons', views.ProviderServiceAreaViewSet)
 
 # Wire up our API using automatic URL routing.
 urlpatterns = [
